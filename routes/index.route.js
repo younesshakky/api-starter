@@ -1,13 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const test = require('./test.route');
+const mainCtrl = require('../controllers/index')
 
-router.use('/test', test)
-
-router.get('/', function(req, res, next) {
-  res.send('welcome from API')
-})
-
-
+/** 
+ * @api GET /api
+*/
+router.get('/', mainCtrl.welcome)
 
 module.exports = router;
